@@ -1,0 +1,268 @@
+/**FONT FACE**/
+@font-face {
+  font-family: "Future";
+  src: url("../assest/fonts/FutureEarthv2.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+/**COLORS**/
+
+:root {
+  --verdeoscuro: hsl(120, 30%, 18%);
+  --yerba: hsl(115, 18%, 26%);
+  --verdeclaro: hsl(92, 49%, 36%);
+  --verdecla: hsl(92, 22%, 39%);
+  --clarito: hsl(78, 43%, 49%);
+  --verderaro: hsla(100, 30%, 58%, 0.911);
+  --negro: hsl(0, 0%, 0%);
+  --blanco: hsla(0, 9%, 87%, 0.918);
+}
+
+/**RESET**/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--blanco);
+}
+
+/**HEADER**/
+
+.hero {
+  background-color: var(--verderaro);
+  height: 50px;
+  width: 100%;
+  position: sticky;
+}
+
+.title {
+  font-family: "Future";
+  display: flex;
+  justify-content: center;
+  color: var(--negro);
+}
+
+/**ROBOT**/
+
+.container {
+  position: relative;
+  height: 540px;
+  width: 400px;
+  margin: 70px auto;
+  padding: 30px;
+}
+
+/**CABEZA**/
+
+.head {
+  background-color: var(--verdeclaro);
+  border-radius: 200px 200px 30px 30px;
+  height: 175px;
+  width: 315px;
+  position: relative;
+}
+
+.antena {
+  top: -85px;
+  left: 185px;
+  position: relative;
+  width: 15px;
+  border: 5px solid transparent;
+  border-top: 10px solid var(--verdeclaro);
+  border-bottom: 80px solid var(--verdeclaro);
+  border-radius: 15px;
+}
+
+.antena2 {
+  bottom: 174px;
+  left: 110px;
+  position: relative;
+  width: 15px;
+  border: 5px solid transparent;
+  border-top: 10px solid var(--verdeclaro);
+  border-bottom: 80px solid var(--verdeclaro);
+  border-radius: 15px;
+}
+
+.container_eyes {
+  background-color: var(--verdeoscuro);
+  position: absolute;
+  width: 75%;
+  height: 55px;
+  left: 10px;
+  bottom: 50px;
+  border-radius: 120px 120px 50px 50px;
+  overflow: hidden;
+}
+
+.ojo1 {
+  background-color: var(--blanco);
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 20px;
+  left: 50px;
+  border-radius: 50%;
+  box-shadow: 8px -8px 15px 7px rgb(0 0 0 / 50%);
+}
+
+.ojo2 {
+  background-color: var(--blanco);
+  height: 40px;
+  width: 40px;
+  position: relative;
+  bottom: 20px;
+  right: -120px;
+  border-radius: 50%;
+  box-shadow: 8px -8px 15px 7px rgb(0 0 0 / 50%);
+}
+
+/**CUERPO**/
+
+.body {
+  height: 285px;
+  width: 315px;
+  border-radius: 52% 48% 47% 53% / 2% 2% 98% 98%;
+  position: relative;
+  background-color: var(--verdeclaro);
+}
+
+.mouth {
+  background: var(--verderaro);
+  width: 240px;
+  height: 200px;
+  border-radius: 52% 48% 47% 53% / 3% 0% 90% 90%;
+  position: relative;
+}
+
+.mouth::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 30px;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  background: var(--verdeoscuro);
+  border-radius: 50%;
+}
+
+.arm_left {
+  width: 100px;
+  height: 100px;
+  background: var(--verdecla);
+  position: absolute;
+  left: -45px;
+  bottom: 210px;
+  border-radius: 50px;
+  z-index: -2;
+  animation: arm-left 6s infinite;
+}
+
+@keyframes arm-left {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(100deg);
+  }
+}
+
+.arm_left::before {
+  content: "";
+  position: absolute;
+  height: 195px;
+  width: 90px;
+  border-radius: 42% 58% 100% 0% / 100% 0% 100% 0%;
+  top: 50px;
+  left: -20px;
+  background: var(--verdecla);
+}
+
+.arm_rigth {
+  width: 100px;
+  height: 100px;
+  background: var(--clarito);
+  position: absolute;
+  right: -45px;
+  bottom: 210px;
+  border-radius: 50px;
+  z-index: 2;
+  animation: arm-rigth 6s infinite;
+}
+
+@keyframes arm-rigth {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-100deg);
+  }
+}
+
+.arm_rigth::before {
+  content: "";
+  position: absolute;
+  height: 195px;
+  width: 90px;
+  border-radius: 42% 58% 100% 0% / 100% 0% 100% 0%;
+  top: 50px;
+  right: 15px;
+  background: var(--clarito);
+}
+
+.rueda {
+  background: var(--verdecla);
+  border: 30px solid var(--verderaro);
+  position: absolute;
+  top: 245px;
+  left: 90px;
+  height: 150px;
+  width: 150px;
+  z-index: -2;
+  border-radius: 50%;
+  animation: rueda 6s infinite;
+}
+
+@keyframes rueda {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(0.5) rotateZ(180deg);
+    transform: scale(0.5) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+/**FOOTER**/
+
+.container_footer {
+  width: 100%;
+  height: 30px;
+  background-color: var(--verdeoscuro);
+  color: var(--clarito);
+}
+
+.container_footer p {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+  font-family: "Ubuntu Mono", monospace;
+}
